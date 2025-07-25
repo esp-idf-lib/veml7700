@@ -11,7 +11,7 @@ Driver for VEML7700 ambient light sensor.
 ## Installation
 
 ```sh
-idf.py add-dependency "esp-idf-lib/veml7700^1.0.0
+idf.py add-dependency esp-idf-lib/veml7700^1.0.0
 ```
 
 ## Support
