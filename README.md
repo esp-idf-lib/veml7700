@@ -1,5 +1,9 @@
 # esp-idf-lib/veml7700
 
+[![Build examples](https://github.com/esp-idf-lib/veml7700/actions/workflows//build.yml/badge.svg)](https://github.com/esp-idf-lib/veml7700/actions/workflows//build.yml)
+[![Build docs](https://github.com/esp-idf-lib/veml7700/actions/workflows//build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/veml7700/actions/workflows//build-docs.yml)
+[![Validation](https://github.com/esp-idf-lib/veml7700/actions/workflows//validate-component.yml/badge.svg)](https://github.com/esp-idf-lib/veml7700/actions/workflows//validate-component.yml)
+
 Driver for VEML7700 ambient light sensor.
 
 * [Documentation](https://esp-idf-lib.github.io/veml7700/)
@@ -11,7 +15,7 @@ Driver for VEML7700 ambient light sensor.
 ## Installation
 
 ```sh
-idf.py add-dependency esp-idf-lib/veml7700^1.0.0
+idf.py add-dependency esp-idf-lib/veml7700
 ```
 
 ## Support
