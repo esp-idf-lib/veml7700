@@ -18,6 +18,7 @@ dependencies:
     version: "*"
   esp-idf-lib/esp_idf_lib_helpers:
     version: "*"
+maintainers: Marc Luehr (@th3link) <marcluehr@gmail.com>
 url: https://github.com/esp-idf-lib/core
 repository: https://github.com/esp-idf-lib/veml7700
 documentation: https://esp-idf-lib.github.io/veml7700/
@@ -26,5 +27,3 @@ discussion: https://github.com/esp-idf-lib/core/discussions
 files:
   exclude:
     - docs/**/*
-maintainers:
-  - Marc Luehr (@th3link) <marcluehr@gmail.com>
