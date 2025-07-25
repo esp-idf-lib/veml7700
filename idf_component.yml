@@ -26,4 +26,4 @@ issues: https://github.com/esp-idf-lib/veml7700/issues
 discussion: https://github.com/esp-idf-lib/core/discussions
 files:
   exclude:
-    - docs
+    - docs/**/*
