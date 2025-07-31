@@ -192,7 +192,7 @@ esp_err_t veml7700_set_config(i2c_dev_t *dev, veml7700_config_t *config)
     uint16_t power_saving_data = 0;
     power_saving_data |= config->power_saving_mode << VEML7700_POWER_SAVING_MODE_SHIFT;
     power_saving_data |= config->power_saving_enable << VEML7700_POWER_SAVING_MODE_ENABLE_SHIFT;
-    
+
     I2C_DEV_TAKE_MUTEX(dev);
     I2C_DEV_CHECK(dev, write_port(dev, VEML7700_COMMAND_CODE_ALS_CONF_0, config_data));
     I2C_DEV_CHECK(dev, write_port(dev, VEML7700_COMMAND_CODE_ALS_WH, config->threshold_high));
@@ -209,28 +209,28 @@ esp_err_t veml7700_get_config(i2c_dev_t *dev, veml7700_config_t *config)
 
     uint16_t config_data = 0;
     uint16_t power_saving_data = 0;
-    
+
     I2C_DEV_TAKE_MUTEX(dev);
     I2C_DEV_CHECK(dev, read_port(dev, VEML7700_COMMAND_CODE_ALS_CONF_0, &config_data));
     I2C_DEV_CHECK(dev, read_port(dev, VEML7700_COMMAND_CODE_ALS_WH, &(config->threshold_high)));
     I2C_DEV_CHECK(dev, read_port(dev, VEML7700_COMMAND_CODE_ALS_WL, &(config->threshold_low)));
     I2C_DEV_CHECK(dev, read_port(dev, VEML7700_COMMAND_CODE_POWER_SAVING, &power_saving_data));
     I2C_DEV_GIVE_MUTEX(dev);
-    
+
     config->gain = (config_data & VEML7700_GAIN_MASK) >> VEML7700_GAIN_SHIFT;
-    config->integration_time = (config_data & VEML7700_INTEGRATION_TIME_MASK) 
-        >> VEML7700_INTEGRATION_TIME_SHIFT;
-    config->integration_time = (config_data & VEML7700_PERSISTENCE_PROTECTION_MASK) 
-        >> VEML7700_PERSISTENCE_PROTECTION_SHIFT;
-    config->integration_time = (config_data & VEML7700_INTERRUPT_ENABLE_MASK) 
-        >> VEML7700_INTERRUPT_ENABLE_SHIFT;
-    config->integration_time = (config_data & VEML7700_SHUTDOWN_MASK) 
-        >> VEML7700_SHUTDOWN_SHIFT;
+    config->integration_time = (config_data & VEML7700_INTEGRATION_TIME_MASK)
+                               >> VEML7700_INTEGRATION_TIME_SHIFT;
+    config->integration_time = (config_data & VEML7700_PERSISTENCE_PROTECTION_MASK)
+                               >> VEML7700_PERSISTENCE_PROTECTION_SHIFT;
+    config->integration_time = (config_data & VEML7700_INTERRUPT_ENABLE_MASK)
+                               >> VEML7700_INTERRUPT_ENABLE_SHIFT;
+    config->integration_time = (config_data & VEML7700_SHUTDOWN_MASK)
+                               >> VEML7700_SHUTDOWN_SHIFT;
 
     config->power_saving_mode = (power_saving_data & VEML7700_POWER_SAVING_MODE_MASK)
-        >> VEML7700_POWER_SAVING_MODE_SHIFT;
+                                >> VEML7700_POWER_SAVING_MODE_SHIFT;
     config->power_saving_enable = (power_saving_data & VEML7700_POWER_SAVING_MODE_ENABLE_MASK)
-        >> VEML7700_POWER_SAVING_MODE_ENABLE_SHIFT;
+                                  >> VEML7700_POWER_SAVING_MODE_ENABLE_SHIFT;
 
     return ESP_OK;
 }
