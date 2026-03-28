@@ -102,7 +102,7 @@ void app_main(void)
     veml7700_config_t veml7700_configuration_readback;
     ESP_ERROR_CHECK(veml7700_get_config(&veml7700_device, &veml7700_configuration_readback));
 
-    if (compare_configuration(&veml7700_configuration_readback,
+    if (compare_configuration(&veml7700_configuration,
                               &veml7700_configuration_readback))
     {
         ESP_LOGI(TAG, "Configuration read back matches");
