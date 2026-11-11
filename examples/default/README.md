@@ -1,5 +1,3 @@
-| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-S2 | ESP32-S3 |
-| ----------------- | ----- | -------- | -------- | -------- | -------- |
 
 # VEML7700 Example
 
@@ -22,8 +20,6 @@ Use `idf.py menuconfig` to adapt the pin configuration to your setup.
 The project **example-veml7700-i2c** contains one source file in C language [main.c](main/main.c). The file is located in folder [main](main).
 
 ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both). 
-
-Besides, using make is also supported up to esp-idf 4.x and will opt out in 5.x
 
 Below is short explanation of remaining files in the project folder.
 
