@@ -32,7 +32,6 @@ static const char *TAG = "VEML7700main";
 static bool compare_configuration(veml7700_config_t* config_a, veml7700_config_t* config_b)
 {
     return (config_a->gain == config_b->gain) &&
-           (config_a->gain == config_b->gain) &&
            (config_a->integration_time == config_b->integration_time) &&
            (config_a->persistence_protect == config_b->persistence_protect) &&
            (config_a->interrupt_enable == config_b->interrupt_enable) &&
