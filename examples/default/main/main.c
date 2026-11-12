@@ -32,7 +32,6 @@ static const char *TAG = "VEML7700main";
 static bool compare_configuration(veml7700_config_t* config_a, veml7700_config_t* config_b)
 {
     return (config_a->gain == config_b->gain) &&
-           (config_a->gain == config_b->gain) &&
            (config_a->integration_time == config_b->integration_time) &&
            (config_a->persistence_protect == config_b->persistence_protect) &&
            (config_a->interrupt_enable == config_b->interrupt_enable) &&
@@ -102,7 +101,7 @@ void app_main(void)
     veml7700_config_t veml7700_configuration_readback;
     ESP_ERROR_CHECK(veml7700_get_config(&veml7700_device, &veml7700_configuration_readback));
 
-    if (compare_configuration(&veml7700_configuration_readback,
+    if (compare_configuration(&veml7700_configuration,
                               &veml7700_configuration_readback))
     {
         ESP_LOGI(TAG, "Configuration read back matches");
